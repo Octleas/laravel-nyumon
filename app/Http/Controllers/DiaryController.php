@@ -35,7 +35,8 @@ class DiaryController extends Controller
         $diary->date = date('Y-m-d');
 
         $diary->save();
-        return back()->with('message', '保存しました');
+        return redirect()->route('diary.index')
+            ->with('message', '日記を作成しました');
     }
 
     // 日記の詳細を表示
