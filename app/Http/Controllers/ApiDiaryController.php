@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Diary;
+
+class ApiDiaryController extends Controller
+{
+    // 日記の一覧を取得
+    public function index()
+    {
+        $diaries = Diary::all();
+        return response()->json($diaries);
+    }
+}
